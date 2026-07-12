@@ -15,6 +15,15 @@ dependencies {
 
 kotlin {
     jvmToolchain(17)
+
+    compilerOptions {
+        freeCompilerArgs.addAll(
+            listOf(
+                "-Xcontext-parameters",
+                "-Xname-based-destructuring=complete"
+            )
+        )
+    }
 }
 
 tasks.test {
